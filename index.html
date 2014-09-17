@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>American Cancer Society</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900,900italic,700italic,500italic,400italic,300italic,100italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+  </head>
+  <body>
+  <div id="wall"></div>
+  <img class="noshow" src="img/header_right.png" id="header_right"></img>
+  <img class="noshow" src="img/header_left.png" id="header_left"></img>
+
+  <div class="views">
+    <div class="view view-main">
+      <div class="pages">
+        <div data-page="index" class="page">
+          <div class="page-content noshow">
+
+
+
+            <div class="content-block-title" 
+            style="font-size:20px;font-weight:400;margin: 180px 8px 10px 4px;">Nearby Events</div>
+            <div class="list-block media-list" >
+              <ul>
+                <li>
+                  <a href="#" class="item-link item-content" style="padding-left:4px;">
+                  <div class="item-media">
+                    <i class="ion-ios7-people-outline" style="font-size:45px;"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title" style="font-size:12px;margin-left:-40px;max-width: none;" id="fill_event_loc"></div>
+                      <div class="item-after" id="fill_event_state"></div>
+                    </div>
+                    <div class="item-subtitle" id="fill_event_date" style="font-size:12px;"></div>
+                    <div class="item-text" style="color:#333" id="fill_event_name"></div>
+                  </div>
+                  </a>
+                </li>
+                <li style="margin-left:54px;">
+                  <a href="#" class="item-link event_search">
+                    <div class="item-content">
+                      <div class="item-media"><i class="ion-search"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">Search Events</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+
+            <div class="content-block-title" 
+            style="font-size:20px;margin: 35px 8px 10px 4px;">Programs and Services</div>
+            <div class="list-block">
+              <ul>
+                <li>
+                  <a href="#" class="item-link item-content" style="padding-left:4px;">
+                  <div class="item-media">
+                    <i class="ion-ios7-people-outline" style="font-size:45px;"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title" style="font-size:12px;margin-left:-40px;max-width: none;" id="fill_event_loc"></div>
+                      <div class="item-after" id="fill_event_state"></div>
+                    </div>
+                    <div class="item-subtitle" id="fill_event_date" style="font-size:12px;"></div>
+                    <div class="item-text" style="color:#333" id="fill_event_name"></div>
+                  </div>
+                  </a>
+                </li>
+                <li style="margin-left:54px;">
+                  <a href="#" class="item-link">
+                    <div class="item-content">
+                      <div class="item-media"><i class="ion-search"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">Search Services</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="content-block-title" 
+            style="font-size:20px;margin: 35px 8px 10px 4px;">Your Local ACS Office</div>
+            <div class="list-block">
+              <ul>
+                <li>
+                  <a href="#" class="item-link item-content" style="padding-left:4px;">
+                  <div class="item-media">
+                    <i class="ion-map" style="font-size:45px;"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <img src="img/map.png"/>
+                    </div>
+                  </div>
+                  </a>
+                </li>
+                <li style="margin-left:54px;">
+                  <a href="#" class="item-link">
+                    <div class="item-content">
+                      <div class="item-media">
+                        <i class="ion-search"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title">ACS Office Locator</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+
+            <div class="content-block-title">American Cancer Society Social Links</div>
+            <div class="content-block">
+
+              <p class="social_button" data-title="Google Plus">
+                <a href="#" class="button" style="font-size:20px;">
+                  <i class="ion-social-googleplus"></i>
+                </a>
+              </p>
+
+              <p class="social_button" data-title="Twitter">
+                <a href="#" class="button" style="font-size:20px;">
+                  <i class="ion-social-twitter"></i>
+                </a>
+              </p>
+
+              <p class="social_button" data-title="Facebook">
+                <a href="#" class="button" style="font-size:20px;">
+                 <i class="ion-social-facebook"></i>
+                </a>
+              </p>
+
+              <p class="social_button" data-title="YouTube">
+                <a href="#" class="button" style="font-size:20px;">
+                <i class="ion-social-youtube"></i>
+                </a>
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popover popover-menu">
+    <div class="popover-angle"></div>
+    <div class="popover-inner">
+      <div class="list-block">
+        <ul>
+          <li><a href="#" class="list-button item-link">Modals</a></li>
+          <li><a href="#" class="list-button item-link">Popover</a></li>
+          <li><a href="tabs.html" class="list-button item-link">Tabs</a></li>
+          <li><a href="panels.html" class="list-button item-link">Side Panels</a></li>
+          <li><a href="list-view.html" class="list-button item-link">List View</a></li>
+          <li><a href="forms.html" class="list-button item-link">Forms</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script id="event_list_tmpl" type="text/template">
+  <div class="pages">
+    <div data-page="event_list" class="page">
+      <div class="page-content">
+
+        <div class="content-block-title" 
+          style="font-size:20px;font-weight:400;margin: 200px 8px 10px 4px;">All Events</div>
+          <div class="list-block media-list" >
+            <ul>
+              {{#each SimpleEventDto}}
+              <li>
+                <a href="#" class="item-link item-content" style="padding-left:4px;">
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title" style="font-size:12px;margin-left:-40px;max-width: none;">{{LocationName}}</div>
+                    <div class="item-after">{{StateProvince}}</div>
+                  </div>
+                  <div class="item-subtitle" style="font-size:12px;">{{StartDate}}</div>
+                  <div class="item-text" style="color:#333">{{EventName}}</div>
+                </div>
+                </a>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+
+      </div>
+    </div>
+  </div>
+  </script>
+
+  <script id="program_list_tmpl" type="text/template">
+  <div class="pages">
+    <div data-page="event_list" class="page">
+      <div class="page-content">
+
+        <div class="content-block-title" 
+          style="font-size:20px;font-weight:400;margin: 200px 8px 10px 4px;">All Events</div>
+          <div class="list-block media-list" >
+            <ul>
+              {{#each SimpleEventDto}}
+              <li>
+                <a href="#" class="item-link item-content" style="padding-left:4px;">
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title" style="font-size:12px;margin-left:-40px;max-width: none;">{{LocationName}}</div>
+                    <div class="item-after">{{StateProvince}}</div>
+                  </div>
+                  <div class="item-subtitle" style="font-size:12px;">{{StartDate}}</div>
+                  <div class="item-text" style="color:#333">{{EventName}}</div>
+                </div>
+                </a>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+
+      </div>
+    </div>
+  </div>
+  </script>
+
+
+
+  
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/framework7.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+
+  </body>
+</html>
