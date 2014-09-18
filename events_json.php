@@ -46,11 +46,11 @@ foreach ($categoryList as $c) {
 }
 
 //lets limite to 20 results
-$params['endRow'] = 20;
+$params['endRow'] = 40;
 $params['startRow'] = 0;
 $params['eventCategory'] = $categoryIds;
 $params['sortAscending'] = false;
-
+$params['startDate'] = $datetime_now;
 
 /*
 ******************************************

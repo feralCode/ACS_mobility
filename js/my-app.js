@@ -1,7 +1,7 @@
 // Initialize your app
 var myApp = new Framework7();
 
-var debug = true;
+var debug = false;
 
 // Export selectors engine
 var $$ = Dom7;
@@ -23,6 +23,27 @@ var EVENTS_OBJ = {};
 var SERVICES_OBJ = {};
 var OFFICES_OBJ = {};
 
+Template7.registerHelper('dateHelper', function (StartDate, options) {
+  // "this" in function context is equal to the expression execution context
+  // "condition" argument contains passed context/condition
+  /*
+    @options contains object with the wollowing properties and methods:
+    "hash" - contains passed hash object with parameters
+    "fn" - method to pass helper block content further to compilier
+    "inverse" - method to pass helper block inverse ({{else}}) content further to compilier
+    "data" - contains additional expression data, like @index for arrays or @key for object
+  */
+  var sd = moment(StartDate);
+  var dateStr = sd.format('ll');
+  console.log('date difference -  ' + sd.diff(moment(),'days')); 
+  if(sd.diff(moment(),'days') > 7) { //more than one day
+    //dateStr  = evn_start.format("MMM Do YYYY");
+    //dateStr += " " + evn_start.format("h:mm a") + ' to ' + evn_start.format("h:mm a")
+    dateStr = sd.calendar();
+  }
+  return dateStr;
+});
+
 var eventListTmpl = $$('script#event_list_tmpl').html();
 var compiledEventListTmpl = Template7.compile(eventListTmpl);
 
@@ -40,6 +61,7 @@ myApp.onPageInit('search', function (page) {
  
     // Do something with html...
 }); */
+
 
 
 /*
@@ -192,11 +214,12 @@ var app_into = function() {
 
 var afterInit = function() {
   //scroll fade stuff
-  $$('.page-content').on('scroll', function(i) {
+  $$('[data-page="index"].view.view-main [data-page="index"] .page-content').on('scroll', function(i) {
       var selected = $$('#header_right, #header_left');
       var scrollVar = $$('.page-content').scrollTop();
-
+      console.log('inside scroller - ');
       if(scrollVar < 150) {
+        $$('#wall').css({'opacity' : 0.2});
         selected[0].style.webkitFilter = "blur(0)";
         selected[1].style.webkitFilter = "blur(0)";
         if(scrollVar < 15) {
@@ -209,11 +232,13 @@ var afterInit = function() {
         }
       }
       if(scrollVar > 150) {
+
        if(scrollVar > 150 &&  scrollVar < 200) {
         selected[0].style.webkitFilter = "blur("+((scrollVar-150)/50*3)+"px)";
         selected[1].style.webkitFilter = "blur("+((scrollVar-150)/50*3)+"px)";
         }
         else {
+          $$('#wall').css({'opacity' : 0.02});
           selected[0].style.webkitFilter = "blur(3px)";
           selected[1].style.webkitFilter = "blur(3px)";
         }
@@ -264,6 +289,10 @@ $$(window).on('load', function() {
   $$(window).on('click', '.event_search', function(){
     var html = compiledEventListTmpl(EVENTS_OBJ.ExecuteSearchWithFacetResult.SimpleEvents);
     mainView.loadContent(html);
+    //var selected = $$('#header_right, #header_left');
+    //selected.css({'opacity':'0.23'});
+    //selected[0].style.webkitFilter = "blur(3px)";
+    //selected[1].style.webkitFilter = "blur(3px)";
   });
 
   $$(window).on('click', '.social_button', function() {

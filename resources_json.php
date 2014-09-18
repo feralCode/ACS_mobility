@@ -177,7 +177,7 @@ $params = array( 'searchParams' => array(
  ));
 
 $response = $soapClient->SearchResourcesLite($params);
-
+print var_dump($response);
 //SearchResourcesLite -> use this for simple view without sessions and all
 
 //SearchResources -> use to return all result properties
@@ -267,5 +267,5 @@ session detail view
 $soapClient = null;
 
 //print as json
-print json_encode($response->SearchResourcesLiteResult->SimpleResourceDto);
+print json_encode($response);
 ?>
